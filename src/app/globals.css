@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Gaming Color Scheme - Clean & Focused */
+  /* Primary: Electric Cyan */
+  --color-primary: #00f0ff;
+  --color-primary-50: #e6feff;
+  --color-primary-100: #b3fcff;
+  --color-primary-200: #80faff;
+  --color-primary-300: #4df8ff;
+  --color-primary-400: #1af5ff;
+  --color-primary-500: #00f0ff;
+  --color-primary-600: #00c4d4;
+  --color-primary-700: #0098a8;
+  --color-primary-800: #006c7d;
+  --color-primary-900: #004051;
+
+  /* Secondary: Neon Purple */
+  --color-secondary: #a855f7;
+  --color-secondary-50: #faf5ff;
+  --color-secondary-100: #f3e8ff;
+  --color-secondary-200: #e9d5ff;
+  --color-secondary-300: #d8b4fe;
+  --color-secondary-400: #c084fc;
+  --color-secondary-500: #a855f7;
+  --color-secondary-600: #9333ea;
+  --color-secondary-700: #7e22ce;
+  --color-secondary-800: #6b21a8;
+  --color-secondary-900: #581c87;
+
+  /* Neutral: Pure Black & White */
+  --color-dark: #0a0a0a;
+  --color-dark-50: #fafafa;
+  --color-dark-100: #f5f5f5;
+  --color-dark-200: #e5e5e5;
+  --color-dark-300: #d4d4d4;
+  --color-dark-400: #a3a3a3;
+  --color-dark-500: #737373;
+  --color-dark-600: #525252;
+  --color-dark-700: #404040;
+  --color-dark-800: #262626;
+  --color-dark-900: #171717;
+  --color-dark-950: #0a0a0a;
+
+  /* Success/Error States */
+  --color-success: #22c55e;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+
+  /* Custom shadows */
+  --shadow-primary: 0 4px 20px 0 rgb(0 240 255 / 0.3);
+  --shadow-primary-lg: 0 10px 30px 0 rgb(0 240 255 / 0.4);
+  --shadow-secondary: 0 4px 20px 0 rgb(168 85 247 / 0.3);
+  --shadow-glow: 0 0 30px 0 rgb(0 240 255 / 0.5);
+
+  /* Custom animations */
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-float: float 3s ease-in-out infinite;
+}
+
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: 'Rajdhani', 'Orbitron', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', 'Rajdhani', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .shadow-primary {
+    box-shadow: 0 4px 20px 0 rgb(0 240 255 / 0.3);
+  }
+
+  .shadow-primary-lg {
+    box-shadow: 0 10px 30px 0 rgb(0 240 255 / 0.4);
+  }
+
+  .shadow-secondary {
+    box-shadow: 0 4px 20px 0 rgb(168 85 247 / 0.3);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 30px 0 rgb(0 240 255 / 0.5);
+  }
+
+  .bg-gradient-gaming {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #00f0ff 0%, #a855f7 100%);
+  }
+
+  .bg-gradient-card {
+    background: linear-gradient(145deg, #171717 0%, #0a0a0a 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #00f0ff 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gradient {
+    border: 2px solid transparent;
+    background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
+                linear-gradient(135deg, #00f0ff 0%, #a855f7 100%) border-box;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px rgb(0 240 255 / 0.5);
+  }
+
+  .gaming-card {
+    background: linear-gradient(145deg, rgba(23, 23, 23, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);
+    border: 1px solid rgba(0, 240, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .gaming-card:hover {
+    border-color: rgba(0, 240, 255, 0.3);
+    box-shadow: 0 0 30px 0 rgb(0 240 255 / 0.1);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px 0 rgb(0 240 255 / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px 0 rgb(0 240 255 / 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+}
